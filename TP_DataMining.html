@@ -13811,7 +13811,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Etude-emprique">Etude emprique<a class="anchor-link" href="#Etude-emprique">&#182;</a></h3><p>Nous allons maintenant étudier les résultats des datasets testé ci-dessus.</p>
+<h3 id="Etude-emprique">Etude emprique<a class="anchor-link" href="#Etude-emprique">&#182;</a></h3><p>Nous allons maintenant étudier les résultats des datasets testé ci-dessus. Pour une analyse plus précise, nous regarderons dataset par dataset et algorithme par algorithme.</p>
 <h4 id="Dataset-n&#176;1">Dataset n&#176;1<a class="anchor-link" href="#Dataset-n&#176;1">&#182;</a></h4><h5 id="Algorithme-de-fr&#233;quence">Algorithme de fr&#233;quence<a class="anchor-link" href="#Algorithme-de-fr&#233;quence">&#182;</a></h5><p>Dans un premier temps, nous allons analyser l'algorithme de fréquence.</p>
 
 </div>
@@ -13929,10 +13929,7 @@ L&#39;aire des motifs précédants est de: 2052  soit  1.74 % du dataset.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nous remarquons ici que l'aire des motifs varient énormément. Entre l'aire du motif le plus petit et l'aire du motif le plus grand il y a un rapport supérieur à 8. A nouveau, la méthode d'échantillonnage nous a permit d'obtenir une bonne diversité de motifs tirés. Une fois de plus, il semblerait que la part de ligne commençant par un 1 devrait être plus importante.</p>
-<h2 id="Changer-le-text-pas-pertinant-avec-dsA.sizes.sum()-qui-calcul-l'air-du-dataset-en-ne-prenant-pas-en-compte-les-Nones">Changer le text pas pertinant avec dsA.sizes.sum() qui calcul l'air du dataset en ne prenant pas en compte les Nones<a class="anchor-link" href="#Changer-le-text-pas-pertinant-avec-dsA.sizes.sum()-qui-calcul-l'air-du-dataset-en-ne-prenant-pas-en-compte-les-Nones">&#182;</a></h2><p>Il est important de préciser, et cette précision sera valable pour l'ensemble des analyses de l'aire, que l'aire du dataset est calculée en fonction de la ligne la plus grande. C'est une aire théorique et dans le cas d'un dataset de 10 lignes si une ligne à 10 valeurs et les autres une seule, le dataset aura une aire estimé de 10x10 = 100 et non de 9x1+10x1 = 19.</p>
-<p>Cette pour cela que nos valeurs en pourcentage du dataset sont extrêmement faibles, nous sommes trop sensible à la présence d'une ligne beaucoup plus grande que les autres.
-Nous avons calculé l'aire ainsi afin de gagner du temps de calculs sur nos machines personnelles.</p>
+<p>Nous remarquons ici que l'aire des motifs varient énormément. Entre l'aire du motif le plus petit et l'aire du motif le plus grand il y a un rapport supérieur à 18. On constate que l'échantillon avec la plus grande aire est l'échantillon le plus petite. Sa petite taille augmente logiquement ses chances d'être souvent présent dans différentes lignes du dataset. A nouveau, la méthode d'échantillonnage nous a permit d'obtenir une bonne diversité de motifs tirés. Une façon de booster les statistiques seraient d'augmenter le nombre de patterns en prenant des patterns plus petit afin de couvrir d'une meilleure façon le dataset.</p>
 <h4 id="Dataset-n&#176;2">Dataset n&#176;2<a class="anchor-link" href="#Dataset-n&#176;2">&#182;</a></h4><h5 id="Algorithme-de-fr&#233;quence">Algorithme de fr&#233;quence<a class="anchor-link" href="#Algorithme-de-fr&#233;quence">&#182;</a></h5><p>Comme pour le dataset précédant, nous allons dans un premier temps analyser l'algorithme de fréquence.</p>
 
 </div>
@@ -14172,7 +14169,7 @@ La fréquence est de  0.0049 %.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Comme pour le dataset n°2, nous obtenons une valeur pour la fréquence identique à tout les échantillons obtenus. Cela montre la régularité de l'algorithme de fréquence. 
+<p>Comme pour le dataset n°2, nous obtenons une valeur pour la fréquence identique à tous les échantillons obtenus. Cela montre la régularité de l'algorithme de fréquence. 
 La diversification des motifs semblent être plus importante qu'avec le dataset précédant.</p>
 <h5 id="Algorithme-de-l'aire">Algorithme de l'aire<a class="anchor-link" href="#Algorithme-de-l'aire">&#182;</a></h5><p>Dans un second temps, nous allons analyser l'algorithme de l'aire.</p>
 
@@ -14233,7 +14230,7 @@ L&#39;aire des motifs précédants est de: 16  soit  0.0011 % du dataset.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nous pouvons constater que les valeurs ne sont pas proches les une des autres en fonctions des échantillons. Il y a un rapport de plus de 2000 entre l'aire du plus petit motif et l'aire du plus grand. On constate aisément que la taille des deux échantillons est différentes. Les échantillons ont toujours des motifs diversifiés. Les motifs sont également tirés proportionnellement.</p>
+<p>Nous pouvons constater que les valeurs ne sont pas proches les une des autres en fonctions des échantillons. Il y a un rapport de plus de 2000 entre l'aire du plus petit motif et l'aire du plus grand. On constate aisément que la taille des deux échantillons est différentes. Les échantillons ont toujours des motifs diversifiés, mais le motif avec l'air la plus grande a beaucoup de "-1". C'est une valeur très présente dans le dataset se qui permet d'augmenter les statistiques de l'échantillon.</p>
 <h4 id="Dataset-n&#176;4">Dataset n&#176;4<a class="anchor-link" href="#Dataset-n&#176;4">&#182;</a></h4><h5 id="Algorithme-de-fr&#233;quence">Algorithme de fr&#233;quence<a class="anchor-link" href="#Algorithme-de-fr&#233;quence">&#182;</a></h5><p>Comme pour les datasets précédants, nous allons dans un premier temps analyser l'algorithme de fréquence.</p>
 
 </div>
@@ -14384,7 +14381,7 @@ L&#39;aire des motifs précédants est de: 16  soit  0.001 % du dataset.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nous constatons pour ce dernier dataset que les valeurs retournées sont très proches les unes des autres, sauf pour le deuxième échantillons qui est beaucoup plus présents que les autres. L'échantillon le plus présent a une taille semble à d'autre échantillons prélevés. Les motifs sont tirés de manière diversifiée dans le dataset.</p>
+<p>Nous constatons pour ce dernier dataset que les valeurs retournées sont très proches les unes des autres, sauf pour le deuxième échantillons qui est beaucoup plus présents que les autres. L'échantillon le plus présent a une taille inférieur à l'ensemble des autres échantillons. Cette taille inférieur augmente les probabilités que cet échantillon soit présent dans le dataset. On constate que l'autre échantillon avec la même taille, comporte des motifs plus variés, limitant ainsi ses chances d'être souvent dans le dataset. Les motifs sont tirés de manière diversifiée dans le dataset.</p>
 <h2 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">&#182;</a></h2><p>On a constaté que lorsque l'on avait une ligne beaucoup plus grande que les autres, les algorithmes de fréquence et d'aire favorisent la ligne la plus grande pour créer des motifs. Ce comportement est lié au poids attribué à la ligne la plus grande. Nous souhaitons trouver des motifs fréquents, donc nous souhaitons éviter des motifs qui s'appliquent seulement dans des grandes lignes. Nous avons trouver trois solutions:</p>
 <ul>
 <li>Supprimer les grandes lignes du dataset</li>
@@ -14598,7 +14595,7 @@ L&#39;aire des motifs précédants est de: 16  soit  0.001 % du dataset.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cas-o&#249;-le-dataset-est-charg&#233;-dans-un-df">Cas o&#249; le dataset est charg&#233; dans un df<a class="anchor-link" href="#Cas-o&#249;-le-dataset-est-charg&#233;-dans-un-df">&#182;</a></h2><p>Dans cette option, nous allons calculer la moyenne du nombre d'items par ligne et en fonction de cela, nous supprimerons les colonnes avec une taille supérieure à la taille moyenne du nombre d'items par ligne. 
+<p>Dans cette option, nous allons calculer la moyenne du nombre d'items par ligne et en fonction de cela, nous supprimerons les colonnes avec une taille supérieure à la taille moyenne du nombre d'items par ligne. 
 Nous nous concentrons sur une partie du dataset, dans l'exemple 40%, afin de gagner du temps lors de l'exécution. Ce seuil est paramétrable dans l'appel à la fonction.</p>
 
 </div>
@@ -14701,9 +14698,9 @@ Nous nous concentrons sur une partie du dataset, dans l'exemple 40%, afin de gag
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Comme vous pouvez le constater, nous avons réduit le nombre de colones du dataset afin de gagner du temps lors de l'exécution des algorithmes. 
+<p>Comme vous pouvez le constater, nous avons réduit le nombre de colones du dataset afin de gagner du temps lors de l'exécution des algorithmes et surtout de ne plus nous concentrer sur la ligne la plus grande. 
 Cette solution pose un problème dans le cas ou les datarecords sont ordonnées. En supprimant les colonnes supérieurs à la taille moyenne, nous pouvons perdre, par exemple, les valeurs les plus grandes dans le cadre d'un classement par ordre croissant.</p>
-<h2 id="Troisi&#232;me-solution">Troisi&#232;me solution<a class="anchor-link" href="#Troisi&#232;me-solution">&#182;</a></h2><p>Dans cette approche, nous réalisons une moyenne mobile pour l'attribution du poids. De cette manière, nous ne supprimons pas de valeurs dans le dataset.</p>
+<h3 id="Deuxi&#232;me-solution">Deuxi&#232;me solution<a class="anchor-link" href="#Deuxi&#232;me-solution">&#182;</a></h3><p>Dans cette approche, nous réalisons une moyenne mobile pour l'attribution du poids. De cette manière, nous ne supprimons pas de valeurs dans le dataset. L'influence de cette solution est uniquement sur le poids de la ligne en modifiant les chances de la ligne d'être tirée au sort.</p>
 
 </div>
 </div>
